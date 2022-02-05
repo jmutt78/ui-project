@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Results } from './Results';
-import { Tube } from './Tube';
+import { Kit } from './Kit';
 import { useFetch } from '../hooks/Api';
 
 const AutoComplete = () => {
@@ -56,16 +56,9 @@ const AutoComplete = () => {
       {/* {loading && <div>Loading...</div>} */}
       {error && <p className='error'>Error: Something went wrong</p>}
       {resultsActive && <Results handleClick={handleClick} data={results} />}
-      {!resultsActive && data.length === 1 && <Tube data={data} />}
+      {!resultsActive && data.length === 1 && <Kit data={data} />}
     </div>
   );
 };
 
 export default AutoComplete;
-
-//todo:
-//Container
-//Title
-//Input and Label
-//Results
-//Tube

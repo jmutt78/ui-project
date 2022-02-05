@@ -12,6 +12,7 @@ export const useFetch = (query) => {
       fetch(`${url}?label_id_like=${query}&_limit=10`)
         .then((response) => response.json())
         .then(setData)
+        .then(setError(''))
         .catch(setError)
         .finally(() => setLoading(false));
     } else {

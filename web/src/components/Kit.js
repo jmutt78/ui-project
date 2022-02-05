@@ -1,8 +1,9 @@
 import React from 'react';
 
-export const Tube = ({ data }) => {
+export const Kit = ({ data }) => {
   return (
     <div>
+      <h4>Kit Detail</h4>
       {data.map(({ label_id, shipping_tracking_code }, index) => {
         return (
           <div key={index}>
