@@ -1,12 +1,12 @@
 import React from 'react';
 
-export const Suggestions = ({ data, handleClick }) => {
+export const Results = ({ data, handleClick }) => {
   return (
     <div>
       <ul>
         {data.map(({ label_id }, index) => {
           return (
-            <li key={index} onClick={handleClick}>
+            <li className='results' key={index} onClick={handleClick}>
               {label_id}
             </li>
           );

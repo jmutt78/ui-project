@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Suggestions } from './Suggestions';
+import { Results } from './Results';
 import { Tube } from './Tube';
 import { useFetch } from '../hooks/Api';
 
@@ -42,11 +42,20 @@ const AutoComplete = () => {
 
   return (
     <div>
-      <input type='search' pattern='/^[0-9A-Za-z\s\-]+$/' value={value} onChange={handleChange} />
+      <div>
+        <label htmlFor='search'>Label ID:</label>
+        <input
+          type='search'
+          pattern='/^[0-9A-Za-z\s\-]+$/'
+          placeholder='Search Label Id'
+          value={value}
+          onChange={handleChange}
+        />
+      </div>
       {/* I would usually handle loading states here, but it looks strange with a json-server */}
       {/* {loading && <div>Loading...</div>} */}
-      {error && <p>Error: Something went wrong</p>}
-      {resultsActive && <Suggestions handleClick={handleClick} data={results} />}
+      {error && <p className='error'>Error: Something went wrong</p>}
+      {resultsActive && <Results handleClick={handleClick} data={results} />}
       {!resultsActive && data.length === 1 && <Tube data={data} />}
     </div>
   );
@@ -54,4 +63,9 @@ const AutoComplete = () => {
 
 export default AutoComplete;
 
-//todo: style
+//todo:
+//Container
+//Title
+//Input and Label
+//Results
+//Tube

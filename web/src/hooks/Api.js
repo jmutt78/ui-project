@@ -9,7 +9,7 @@ export const useFetch = (query) => {
   useEffect(() => {
     if (query.length > 0) {
       setLoading(true);
-      fetch(`${url}?label_id_like=${query}&_limit=5`)
+      fetch(`${url}?label_id_like=${query}&_limit=10`)
         .then((response) => response.json())
         .then(setData)
         .catch(setError)
